@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dental Clinic</title>
+    <link rel="icon" type="image/x-icon" href="./assets/DH_Logo_Black.png" />
+    <meta
+      name="description"
+      content="Digital House CTD | Proyecto integrador | BACKEND I"
+    />
+    <link rel="stylesheet" href="./css/systemStyles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="./js/system-appointment.js"></script>
+  </head>
+
+  <body>
+    <header class="container">
+      <nav>
+        <div>
+        <h1>Gestión de turnos</h1>
+        </div>
+
+        <div class="user-info">
+          <p>username</p>
+          <div class="user-image"></div>
+          <button
+            id="closeApp"
+            class=".swal2-x-mark-line-left .swal2-x-mark-line-right"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="forms">
+      <div>
+      <h3>Crear nuevo turno</h3>
+      <form class= "form-paciente-odontologo-turno form-crear">
+        <label for="id-paciente">Id paciente</label><br>
+        <input type="text" id="id-paciente" name="id-paciente" placeholder="Ingrese id" required><br>
+        <label for="id-odontologo">Id odontólogo</label><br>
+        <input type="text" id="id-odontologo" name="id-odontologo" placeholder="Ingrese id" required><br>
+        <label for="alta-turno-dia">Dia</label><br>
+        <input type="date" id="alta-turno-dia" name="alta-turno-dia" required><br>
+        <label for="alta-turno-hora">Hora</label><br>
+        <input type="time" id="alta-turno-hora" name="alta-turno-hora" step="1" required><br><br>
+        <div class="align-button">
+        <button class="button-style" type="submit">Crear</button>
+        <div class="texto-exito"></div>
+        <div class="texto-error"></div>
+      </div>
+      </form>
+    </div>
+
+    <div>
+      <h3>Modificar turno</h3>
+      <form class= "form-paciente-odontologo-turno form-actualizar turno" style="height: 580px;">
+        <label for="id-turno-actualizar">Id turno</label><br>
+        <input type="text" id="id-turno-actualizar" name="id-turno-actualizar" placeholder="Ingrese id" required><br>
+        <label for="id-paciente-actualizar">Id paciente</label><br>
+        <input type="text" id="id-paciente-actualizar" name="id-paciente-actualizar" placeholder="Ingrese id" required><br>
+        <label for="id-odontologo-actualizar">Id odontólogo</label><br>
+        <input type="text" id="id-odontologo-actualizar" name="id-odontologo-actualizar" placeholder="Ingrese id" required><br>
+        <label for="actualizar-turno-dia">Dia</label><br>
+        <input type="date" id="actualizar-turno-dia" name="actualizar-turno-dia" required><br>
+        <label for="actualizar-turno-hora">Hora</label><br>
+        <input type="time" id="actualizar-turno-hora" name="actualizar-turno-hora" step="1" required><br><br>
+        <div class="align-button">
+        <button class="button-style" type="submit">Modificar</button>
+        <div class="texto-exito"></div>
+        <div class="texto-error"></div>
+      </div>
+      </form>
+    </div>
+
+    <div>
+      <h3>Eliminar turno</h3>
+      <form class= "form-paciente-odontologo-turno eliminar-turno">
+        <label for="id-turno-eliminar">Id turno</label><br>
+        <input type="text" id="id-turno-eliminar" name="id-turno-eliminar" placeholder="Ingrese id" required><br>
+        <button class="button-style" type="submit">Eliminar</button>
+        <div class="texto-exito"></div>
+        <div class="texto-error"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="busqueda turnos-busqueda">Búsquedas</div>
+  <div class="form-admin-buscar form-admin-buscar-turno">
+    <h3>Buscar turno por Id</h3>
+    <form>
+      <label for="id-turno">Id turno</label><br>
+      <input type="number" id="id-turno" name="id-turno" placeholder="Ingrese id turno" required><br>
+      <button class="button-style" type="submit">Buscar</button>
+      <div class="texto-error"></div>
+    </form>
+  </div>
+</div>
+
+<div class="listar">
+<div class="listar-todos">
+  <h3>Listar turnos</h3>
+  <button class="button-style" type="submit">Buscar</button>
+</div>
+
+<div class="listar-turnos-paciente-odontologo listar-paciente">
+  <h3>Listar turnos por Id paciente</h3>
+  <form>
+    <label for="id-turno-paciente">Id</label><br>
+    <input type="number" id="id-turno-paciente" name="id-turno-paciente" placeholder="Ingrese id" required><br>
+    <button class="button-style" type="submit">Buscar</button>
+  </form>
+
+</div>
+
+<div class="listar-turnos-paciente-odontologo listar-odontologo">
+  <h3>Listar turnos por Id odontólogo</h3>
+  <form>
+    <label for="id-turno-odontologo">Id</label><br>
+    <input type="number" id="id-turno-odontologo" name="id-turno-odontologo" placeholder="Ingrese id" required><br>
+    <button class="button-style" type="submit">Buscar</button>
+  </form>
+
+</div>
+
+</div>
+
+<p class="texto-error-listado"></p>
+<table>
+</table>
+    </main>
+
+    <footer>
+      <p>DentalClinic ♥</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>Dental Clinic</title>
+    <link rel="icon" type="image/x-icon" href="./assets/DH_Logo_Black.png" />
+    <meta
+      name="description"
+      content="Digital House CTD | Proyecto integrador | BACKEND I"
+    />
+    <link rel="stylesheet" href="./css/systemStyles.css" />
+  
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="./js/system-admin-dentist.js"></script>
+
+  </head>
+
+  <body>
+    <header class="container">
+      <nav>
+        <div>
+        <h1>Gestión de odontólogos</h1>
+        <h2>Admin</h2>
+        </div>
+
+        <div class="user-info">
+          <p>username</p>
+          <div class="user-image"></div>
+          <button
+            id="closeApp"
+            class=".swal2-x-mark-line-left .swal2-x-mark-line-right"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="forms">
+      <div>
+      <h3>Crear nuevo odontólogo</h3>
+      <form class= "form-paciente-odontologo-turno form-crear">
+        <label for="crear-nombre">Nombre</label><br>
+        <input type="text" id="crear-nombre" name="crear-nombre" placeholder="Ingrese nombre" required><br>
+        <label for="crear-apellido">Apellido</label><br>
+        <input type="text" id="crear-apellido" name="crear-apellido" placeholder="Ingrese apellido" required><br>
+        <label for="crear-matricula">Matrícula</label><br>
+        <input type="number" id="crear-matricula" name="crear-matricula" placeholder="Ingrese matricula" required><br><br>
+        <button class="button-style" type="submit">Crear</button>
+          <div class="texto-exito"></div>
+          <div class="texto-error"></div>
+      </form>
+    </div>
+
+    <div>
+      <h3>Modificar odontólogo</h3>
+      <form class= "form-paciente-odontologo-turno form-actualizar" style="height: 460px;">
+        <label for="actualizar-id">Id Odontologo</label><br>
+        <input type="number" id="actualizar-id" name="actualizar-id" placeholder="Ingrese id" required><br>
+        <label for="actualizar-nombre">Nombre</label><br>
+        <input type="text" id="actualizar-nombre" name="actualizar-nombre" placeholder="Ingrese nombre" required><br>
+        <label for="actualizar-apellido">Apellido</label><br>
+        <input type="text" id="actualizar-apellido" name="actualizar-apellido" placeholder="Ingrese apellido" required><br>
+        <label for="actualizar-matricula">Matrícula</label><br>
+        <input type="text" id="actualizar-matricula" name="actualizar-matricula" placeholder="Ingrese matricula" required><br>
+        <button class="button-style" type="submit">Modificar</button>
+        <div class="texto-exito"></div>
+        <div class="texto-error"></div>
+      </form>
+    </div>
+
+    <div>
+      <h3>Eliminar odontólogo</h3>
+      <form class= "form-paciente-odontologo-turno eliminar-odontologo">
+        <label for="id-eliminar-odontologo">Id odontólogo</label><br>
+        <input type="number" id="id-eliminar-odontologo" name="id-eliminar-odontologo" placeholder="Ingrese id" required><br>
+        <button class="button-style" type="submit">Eliminar</button>
+        <div class="texto-exito"></div>
+        <div class="texto-error"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="busqueda odontologo-busqueda">Búsquedas</div>
+  <div class="form-admin-buscar form-admin-buscar-odontologo">
+    <h3>Buscar odontólogo</h3>
+    <form class="buscar-odontologo">
+      <label for="id-odontologo">Id</label><br>
+      <input type="number" id="id-odontologo" name="id-odontologo" placeholder="Ingrese id" required ><br>
+      <button class="button-style" type="submit">Buscar</button>
+      <div class="texto-error"></div>
+    </form>
+  </div>
+
+
+<div class= "listar-o">
+  <h3>Listar odontólogos</h3>
+    <button class="button-style" >Buscar</button>
+</div>
+<ul id="ul">
+
+</ul>
+
+    </main>
+
+    <footer>
+      <p>DentalClinic ♥</p>
+    </footer>
+  </body>
+</html>

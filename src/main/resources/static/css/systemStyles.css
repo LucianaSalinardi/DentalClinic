@@ -1,0 +1,437 @@
+@import url("./globalStyles.css");
+
+body {
+  background-color: var(--oscuro);
+  background-image: url("../assets/odontologia.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.137);
+}
+
+header {
+  background-color: var(--negro);
+  height: 5rem;
+  margin-bottom: 3rem;
+}
+
+nav {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav div h1 h2 {
+  display: flex;
+  flex-direction: column;
+}
+
+nav h2 {
+  color: var(--celeste);
+}
+
+nav .user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .user-info .user-image {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  background-image: url("../assets/user.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50vh;
+  margin-left: 0.5rem;
+}
+
+nav .user-info button {
+  background-color: var(--laranja);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 2rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.container {
+  padding: 0 5%;
+}
+
+form {
+  background-color: var(--negro);
+  padding: 2rem 3rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+form input {
+  flex-grow: 1;
+  border-radius: 100vh;
+  padding: 0.3rem 1rem;
+  border: 2px solid var(--app-grey);
+}
+
+form input:focus {
+  outline: none;
+  border: 2px solid var(--lila);
+}
+
+form button:hover {
+  background-color: var(--azul-hover);
+}
+
+main h2 {
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+main span {
+  margin-left: 10px;
+}
+
+main div h3 {
+  margin-left: 50px;
+}
+
+main .forms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-paciente-odontologo input {
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.form-paciente-odontologo label {
+  color: var(--celeste);
+  font-weight: 200;
+}
+
+.form-paciente-odontologo-turno {
+  margin-top: 28px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.form-alineacion  {
+  height: 580px;
+  width: 89%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.actualizar-paciente{
+  height: 200px;
+}
+
+.form-actualizar {
+  height: 400px;
+}
+
+.form-admin-buscar-turno form input{
+margin-left: -32px;
+}
+
+.turno input {
+  margin-bottom: 8px;
+}
+
+.form-alineacion input {
+  margin-bottom: 15px;
+}
+
+.form-alineacion div {
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.form-admin-buscar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+
+.form-admin-buscar h3 {
+  margin-bottom: 15px;
+}
+
+
+
+.busqueda {
+  display: flex;
+  text-align: center;
+  font-weight: 200;
+  font-family: "Archivo", sans-serif;
+  font-size: 30px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: var(--celeste);
+}
+
+.buscar-paciente{
+  display: flex;
+}
+
+
+.paciente-busqueda{
+  display: flex;
+  justify-content: center;
+
+}
+
+.odontologo-busqueda{
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.turnos-busqueda{
+  display: flex;
+  justify-content: center;
+}
+
+.form-admin-buscar label {
+  margin-top: -50px;
+  color: var(--celeste);
+  margin-right: -20px;
+}
+
+.form-admin-buscar button {
+  margin-inline-end: 200px;
+}
+
+.button-style {
+  background-color: var(--celeste);
+  font-size: medium;
+  font-family: "Archivo", sans-serif;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px 10px;
+  margin-left: 1rem;
+  font-weight: 400;
+}
+
+.button-style-admin {
+  background-color: var(--celeste);
+  font-size: medium;
+  font-family: "Archivo", sans-serif;
+  color: white;
+  padding: 20px 30px 20px;
+  border-radius: 10px 10px;
+  cursor: pointer;
+  font-weight: 400;
+  width: 400px;
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 100px;
+}
+
+.list-style {
+  font-size: 18px;
+  font-family: "Archivo", sans-serif;
+  color: white;
+  font-weight: 400;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+ul p {
+  margin-left: 20px;
+}
+
+.form-admin-buscar p {
+  margin-left: 20px;
+}
+
+.listar-turnos-paciente-odontologo {
+  display: flex;
+  align-items: center;
+}
+
+
+ul button {
+  width: 55px;
+  height: 30px;
+  background-color: var(--laranja);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.alineacion-button {
+  display: flex;
+  align-items: flex-end;
+}
+
+.texto-exito {
+  color: green;
+  margin-top: 15px;
+}
+
+.texto-error {
+  color: red;
+  margin-top: 15px;
+}
+
+.container-list {
+  background-color: var(--negro);
+  height: 5rem;
+  margin-bottom: 3rem;
+  border-radius: 10px 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button-style-admin:hover {
+  background-color: var(--azul-hover);
+}
+
+.listar {
+  display: flex;
+  flex-direction: column;
+}
+
+.listar h3 {
+  margin-top: 30px;
+}
+
+.listar-p {
+  display: flex;
+  padding-bottom:  80px;
+  align-items: center;
+}
+
+.listar-o {
+  display: flex;
+  padding-bottom: 80px;
+  align-items: center;
+}
+
+.listar-o button:hover {
+  background-color: var(--azul-hover);
+}
+
+.listar-p button:hover {
+  background-color: var(--azul-hover);
+}
+
+.listar-todos button {
+  display: flex;
+  margin-left: 300px;
+  margin-bottom: 40px;
+  margin-top: -30px;
+}
+
+.listar-turnos-paciente-odontologo input {
+  margin-bottom: -10px;
+  margin-left: 25px;
+  margin-right: 15px;
+  border-radius: 10px;
+  height: 30px;
+}
+
+.listar-turnos-paciente-odontologo button {
+  margin-top: 9px;
+}
+
+.listar-turnos-paciente-odontologo label {
+  margin-bottom: -7px;
+  font-size: 18px;
+}
+
+
+.listar-turnos-paciente-odontologo form{
+  width: 400px;
+  height: 50px;
+  margin-left: 60px;
+  margin-top: 40px;
+}
+
+.listar-paciente form{
+  margin-left: 82px;
+}
+
+.texto-error-listado{
+  font-size: 25px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.listar button:hover {
+  background-color: var(--azul-hover);
+}
+
+footer {
+  height: 2rem;
+  width: 100%;
+  background-color: var(--negro);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: var(--celeste);
+  font-weight: 500;
+}
+
+/*TABLAS*/
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid rgb(41, 126, 196);
+  background-color: rgb(41, 126, 196);
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th {
+  text-align: center;
+}
+
+th,
+td {
+  padding: 20px;
+}
+
+td {
+  border: 2px solid rgb(41, 126, 196);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #000000;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #000000;
+}

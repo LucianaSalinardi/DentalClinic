@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "4f4a79ed-b5ff-45c0-a9dc-13674c65733c",
+		"name": "Sistema Reservas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27994374"
+	},
+	"item": [
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Create appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient\": {\r\n        \"idPatient\": 1\r\n    },\r\n    \"dentist\": {\r\n        \"idDentist\": 1\r\n    },\r\n    \"appointmentDate\": \"2023-07-02\",\r\n    \"appointmentHour\": \"15:20:34\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get appointment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/appointments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all apointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/appointments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update appointment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAppointment\": 11,\r\n    \"patient\": {\r\n        \"idPatient\": 5\r\n    },\r\n    \"dentist\": {\r\n        \"idDentist\": 7\r\n    },\r\n    \"appointmentDate\": \"2023-07-02\",\r\n    \"appointmentHour\": \"15:20:34\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  all appointments by patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/appointments/patients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"appointments",
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all appointments by dentist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/appointments/dentists/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"appointments",
+								"dentists",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dentist",
+			"item": [
+				{
+					"name": "Create dentist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Lautaro\",\r\n    \"lastName\": \"Lopez\",\r\n    \"enrollment\": 12689\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/dentists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"dentists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get dentist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/dentists/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"dentists",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete dentist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/dentists/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"dentists",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all dentists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/dentists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"dentists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update dentist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idDentist\": 3,\r\n    \"firstName\": \"Camila\",\r\n    \"lastName\": \"Juarez\",\r\n    \"enrollment\": 3465\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/dentists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"dentists"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Create patient",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Franco\",\r\n    \"lastName\": \"Lopez\",\r\n    \"dni\": \"45767657\",\r\n    \"address\":{\r\n        \"street\": \"Corrientes\",\r\n        \"number\": 345,\r\n        \"town\": \"CABA\",\r\n        \"province\": \"Buenos Aires\",\r\n        \"postalCode\": 1212,\r\n        \"country\": \"Argentina\"\r\n    }\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/patients/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"patients",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update patient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPatient\": 3,\r\n    \"firstName\": \"Rodrigo\",\r\n    \"lastName\": \"Lopez\",\r\n    \"dni\": \"4567537\",\r\n    \"address\":{\r\n        \"idAddress\": 3,\r\n        \"street\": \"Misiones\",\r\n        \"number\": 345,\r\n        \"town\": \"CABA\",\r\n        \"province\": \"Buenos Aires\",\r\n        \"postalCode\": 1212,\r\n        \"country\": \"Argentina\"\r\n    }\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clinical-dental/patients/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinical-dental",
+								"patients",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

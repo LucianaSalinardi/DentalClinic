@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dental Clinic</title>
+    <link rel="icon" type="image/x-icon" href="./assets/DH_Logo_Black.png" />
+    <meta
+      name="description"
+      content="Digital House CTD | Proyecto integrador | BACKEND I"
+    />
+    <link rel="stylesheet" href="./css/systemStyles.css" />
+    
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="./js/system-admin-patient.js"></script>
+  </head>
+
+  <body>
+    <header class="container">
+      <nav>
+        <div>
+        <h1>Gestión de pacientes</h1>
+        <h2>Admin</h2>
+        </div>
+
+        <div class="user-info">
+          <p>username</p>
+          <div class="user-image"></div>
+          <button
+            id="closeApp"
+            class=".swal2-x-mark-line-left .swal2-x-mark-line-right"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="forms">
+      <div>
+      <h3>Crear nuevo paciente</h3>
+      <form class= "form-paciente-odontologo-turno form-crear form-alineacion" style="height: 500px;">
+        <div>
+        <label for="crear-nombre">Nombre</label><br>
+        <input type="text" id="crear-nombre" name="crear-nombre" placeholder="Ingrese nombre" required><br>
+        <label for="crear-apellido">Apellido</label><br>
+        <input type="text" id="crear-apellido" name="crear-apellido" placeholder="Ingrese apellido" required><br>
+        <label for="crear-dni">DNI</label><br>
+        <input type="text" id="crear-dni" name="crear-dni" placeholder="Ingrese DNI" required><br>
+      </div>
+        <div>
+        <label for="crear-calle">Calle</label><br>
+        <input type="text" id="crear-calle" name="crear-calle" placeholder="Ingrese calle" required><br>
+        <label for="crear-numero">Numero</label><br>
+        <input type="number" id="crear-numero" name="crear-numero" placeholder="Ingrese numero" required><br>
+        <label for="crear-localidad">Localidad</label><br>
+        <input type="text" id="crear-localidad" name="crear-localidad" placeholder="Ingrese localidad" required><br>
+        <label for="crear-provincia">Provincia</label><br>
+        <input type="text" id="crear-provincia" name="crear-provincia" placeholder="Ingrese provincia" required><br>
+        <label for="crear-cp">Codigo Postal</label><br>
+        <input type="number" id="crear-cp" name="crear-cp" placeholder="Ingrese CP" required><br>
+        <label for="crear-pais">País</label><br>
+        <input type="text" id="crear-pais" name="crear-pais" placeholder="Ingrese país" required><br>
+        <div class="align-button">
+          <button class="button-style" type="submit">Crear</button>
+        </div>
+          <div class="texto-exito"></div>
+          <div class="texto-error"></div>
+      </div>
+      
+      </form>
+    </div>
+
+    <div>
+      <h3>Modificar paciente</h3>
+      <form class= "form-paciente-odontologo-turno form-actualizar form-alineacion" style="height: 560px;">
+        <div>
+        <label for="actualizar-id">Id Paciente</label><br>
+        <input type="number" id="actualizar-id" name="actualizar-id" placeholder="Ingrese id" required><br>
+        <label for="actualizar-nombre">Nombre</label><br>
+        <input type="text" id="actualizar-nombre" name="actualizar-nombre" placeholder="Ingrese nombre" required><br>
+        <label for="actualizar-apellido">Apellido</label><br>
+        <input type="text" id="actualizar-apellido" name="actualizar-apellido" placeholder="Ingrese apellido" required><br>
+        <label for="actualizar-dni">DNI</label><br>
+        <input type="text" id="actualizar-dni" name="actualizar-dni" placeholder="Ingrese DNI" required><br>
+      </div>
+        <div>
+          <label for="id-address">Id Dirección</label><br>
+          <input type="number" id="id-address" name="id-address" placeholder="Ingrese id" required><br>
+          <label for="actualizar-calle">Calle</label><br>
+          <input type="text" id="actualizar-calle" name="actualizar-calle" placeholder="Ingrese calle" required><br>
+          <label for="actualizar-numero">Numero</label><br>
+          <input type="number" id="actualizar-numero" name="actualizar-numero" placeholder="Ingrese numero" required><br>
+          <label for="actualizar-localidad">Localidad</label><br>
+          <input type="text" id="actualizar-localidad" name="actualizar-localidad" placeholder="Ingrese localidad" required><br>
+          <label for="actualizar-provincia">Provincia</label><br>
+          <input type="text" id="actualizar-provincia" name="actualizar-provincia" placeholder="Ingrese provincia" required><br>
+          <label for="actualizar-cp">Codigo Postal</label><br>
+          <input type="number" id="actualizar-cp" name="actualizar-cp" placeholder="Ingrese CP" required><br>
+          <label for="actualizar-pais">País</label><br>
+          <input type="text" id="actualizar-pais" name="actualizar-pais" placeholder="Ingrese país" required><br>
+
+          <div class="align-button">
+        <button class="button-style" type="submit">Modificar</button>
+          </div>
+              <div class="texto-exito"></div>
+              <div class="texto-error"></div>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <h3>Eliminar paciente</h3>
+      <form class= "form-paciente-odontologo-turno eliminar-paciente">
+        <label for="id-eliminar-paciente">Id paciente</label><br>
+        <input type="number" id="id-eliminar-paciente" name="id-eliminar-paciente" placeholder="Ingrese id" required><br>
+        <button class="button-style" type="submit">Eliminar</button>
+        <div class="texto-exito"></div>
+        <div class="texto-error"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="busqueda paciente-busqueda">Búsquedas</div>
+  <div class="form-admin-buscar form-admin-buscar-paciente">
+    <h3>Buscar paciente</h3>
+    <form class="buscar-paciente">
+      <label for="id-paciente">Id</label><br>
+      <input type="number" id="id-paciente" name="id-paciente" placeholder="Ingrese id" required><br>
+      <button class="button-style" type="submit">Buscar</button>
+      <div class="texto-error"></div>
+
+    </form>
+  </div>
+</div>
+
+<div class="listar-p">
+  <h3>Listar pacientes</h3>
+    <button class="button-style" type="submit">Buscar</button>
+</div>
+      <ul id="ul">
+      </ul>
+
+</main>
+    <footer>
+      <p>DentalClinic ♥</p>
+    </footer>
+  </body>
+</html>
