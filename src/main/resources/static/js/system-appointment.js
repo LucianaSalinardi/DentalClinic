@@ -17,65 +17,73 @@ window.addEventListener("load", function () {
     const inputFecha = document.getElementById("alta-turno-dia").value;
     const inputHora = document.getElementById("alta-turno-hora").value;
 
-      if (textoCrear.hasChildNodes) {
-        textoCrear.innerHTML = "";
-      }
+    if (textoCrear.hasChildNodes) {
+      textoCrear.innerHTML = "";
+    }
 
-      if (textoError.hasChildNodes) {
-        textoError.innerHTML = "";
-      }
+    if (textoError.hasChildNodes) {
+      textoError.innerHTML = "";
+    }
 
-      const datosTurno = {
-        patient: {
-          idPatient: inputIdPaciente,
-        },
-        dentist: {
-          idDentist: inputIdOdontologo,
-        },
-        appointmentDate: inputFecha,
-        appointmentHour: inputHora,
-      };
+    const datosTurno = {
+      patient: {
+        idPatient: inputIdPaciente,
+      },
+      dentist: {
+        idDentist: inputIdOdontologo,
+      },
+      appointmentDate: inputFecha,
+      appointmentHour: inputHora,
+    };
 
-      const configuraciones = {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(datosTurno),
-      };
+    const configuraciones = {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(datosTurno),
+    };
 
-      fetch(baseUrl, configuraciones)
-        .then((response) => {
-          if (response.status == 400) {
-            textoError.innerHTML += `<p><small>Revisa los campos ingresados</small></p>`;
-            return response.json();
-          }
+    fetch(baseUrl, configuraciones)
+      .then((response) => {
+        if (response.status == 400) {
+          textoError.innerHTML += `<p><small>Revisa los campos ingresados</small></p>`;
+          return response.json();
+        }
 
-          if (response.status == 404) {
-            textoError.innerHTML += `<p><small>No existe el paciente u odontologo </small></p>`;
-            return response.json();
-          }
+        if (response.status == 403) {
+          Swal.fire({
+            title: "No tienes permiso para realizar esta acción",
+            icon: "alert",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "OK",
+          });
+          return response.json();
+        }
 
-          if (response.status == 409) {
-            textoError.innerHTML += `<p><small>Ya existe un turno</small></p>`;
-            return response.json(); 
-          }
+        if (response.status == 404) {
+          textoError.innerHTML += `<p><small>No existe el paciente u odontologo </small></p>`;
+          return response.json();
+        }
 
-          if (response.ok) {
-            textoCrear.innerHTML += `<p><small>Turno creado con éxito</small></p>`;
-            return response.json();
-          }
-        })
-        .then((data) => {
-          console.log(data);
+        if (response.status == 409) {
+          textoError.innerHTML += `<p><small>Ya existe un turno</small></p>`;
+          return response.json();
+        }
 
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        if (response.ok) {
+          textoCrear.innerHTML += `<p><small>Turno creado con éxito</small></p>`;
+          return response.json();
+        }
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-      formCrearTurno.reset();
-    
+    formCrearTurno.reset();
   });
 
   //ACTUALIZAR TURNO
@@ -103,67 +111,74 @@ window.addEventListener("load", function () {
       "actualizar-turno-hora"
     ).value;
 
-      if (textoActualizar.hasChildNodes) {
-        textoActualizar.innerHTML = "";
-      }
+    if (textoActualizar.hasChildNodes) {
+      textoActualizar.innerHTML = "";
+    }
 
-      if (textoErrorActualizar.hasChildNodes) {
-        textoErrorActualizar.innerHTML = "";
-      }
+    if (textoErrorActualizar.hasChildNodes) {
+      textoErrorActualizar.innerHTML = "";
+    }
 
-      const datosTurno = {
-        idAppointment: idTurno,
-        patient: {
-          idPatient: idPacienteActualizar,
-        },
-        dentist: {
-          idDentist: idOdontologoActualizar,
-        },
-        appointmentDate: actualizarFecha,
-        appointmentHour: actualizarHora,
-      };
+    const datosTurno = {
+      idAppointment: idTurno,
+      patient: {
+        idPatient: idPacienteActualizar,
+      },
+      dentist: {
+        idDentist: idOdontologoActualizar,
+      },
+      appointmentDate: actualizarFecha,
+      appointmentHour: actualizarHora,
+    };
 
-      const configuraciones = {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(datosTurno),
-      };
+    const configuraciones = {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(datosTurno),
+    };
 
-      fetch(baseUrl, configuraciones)
-        .then((response) => {
+    fetch(baseUrl, configuraciones)
+      .then((response) => {
+        if (response.status == 400) {
+          textoErrorActualizar.innerHTML += `<p><small>Revisa los campos ingresados</small></p>`;
+          return response.json();
+        }
 
-          if (response.status == 400) {
-            textoErrorActualizar.innerHTML += `<p><small>Revisa los campos ingresados</small></p>`;
-            return response.json(); 
-          }
+        if (response.status == 403) {
+          Swal.fire({
+            title: "No tienes permiso para realizar esta acción",
+            icon: "alert",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "OK",
+          });
+          return response.json();
+        }
 
-          if (response.status == 404) {
-            textoErrorActualizar.innerHTML += `<p><small>No existe turno asociado a esos datos</small></p>`;
-            return response.json();
-          }
+        if (response.status == 404) {
+          textoErrorActualizar.innerHTML += `<p><small>No existe turno asociado a esos datos</small></p>`;
+          return response.json();
+        }
 
-          
-          if (response.status == 409) {
-            textoErrorActualizar.innerHTML += `<p><small>Ya tiene un turno para esa fecha</small></p>`;
-            return response.json();
-          }
+        if (response.status == 409) {
+          textoErrorActualizar.innerHTML += `<p><small>Ya tiene un turno para esa fecha</small></p>`;
+          return response.json();
+        }
 
-          if (response.ok) {
-            textoActualizar.innerHTML += `<p><small>Turno actualizado con éxito</small></p>`;
-            return response.json();
-          }
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        if (response.ok) {
+          textoActualizar.innerHTML += `<p><small>Turno actualizado con éxito</small></p>`;
+          return response.json();
+        }
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-      formActualizar.reset();
-    
+    formActualizar.reset();
   });
 
   //LISTAR TODOS
@@ -188,6 +203,16 @@ window.addEventListener("load", function () {
 
     fetch(baseUrl, configuraciones)
       .then((response) => {
+        if (response.status == 403) {
+          Swal.fire({
+            title: "No tienes permiso para realizar esta acción",
+            icon: "alert",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "OK",
+          });
+          return response.json();
+        }
+
         if (response.status == 404) {
           textoErrorListado.innerHTML += `<span class="container-list"> No existen turnos asignados</span>`;
         }
@@ -226,14 +251,24 @@ window.addEventListener("load", function () {
 
     fetch(`${baseUrl}/patients/${idPaciente}`, configuraciones)
       .then((response) => {
+        if (response.status == 403) {
+          Swal.fire({
+            title: "No tienes permiso para realizar esta acción",
+            icon: "alert",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "OK",
+          });
+          return response.json();
+        }
+
         if (response.status == 404) {
           textoErrorListado.innerHTML += `<span class="container-list"> No existen turnos asignados o el paciente no existe </span>`;
           return response.json();
         }
-        if(response.ok){
+        if (response.ok) {
           return response.json();
         }
-  })
+      })
       .then((data) => {
         renderizarTurnos(data);
       })
@@ -269,6 +304,16 @@ window.addEventListener("load", function () {
 
     fetch(`${baseUrl}/dentists/${idOdontologo}`, configuraciones)
       .then((response) => {
+        if (response.status == 403) {
+          Swal.fire({
+            title: "No tienes permiso para realizar esta acción",
+            icon: "alert",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "OK",
+          });
+          return response.json();
+        }
+
         if (response.status == 404) {
           textoErrorListado.innerHTML += `<span class="container-list"> No existen turnos asignados o el odontólogo no existe </span>`;
         }
@@ -281,19 +326,15 @@ window.addEventListener("load", function () {
       .catch((error) => {
         console.log(error);
       });
-      botonListarTurnoOdontologo.reset();
-    });
-  
-  
+    botonListarTurnoOdontologo.reset();
+  });
 
   // BUSCAR POR ID
 
   let botonBuscarPorId = document.querySelector(
     ".form-admin-buscar-turno form"
   );
-  let textoBuscarError = document.querySelector(
-    ".form-admin-buscar-turno div"
-  );
+  let textoBuscarError = document.querySelector(".form-admin-buscar-turno div");
 
   botonBuscarPorId.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -311,10 +352,18 @@ window.addEventListener("load", function () {
 
     fetch(`${baseUrl}/${id}`, configuraciones)
       .then((response) => {
+        if (response.status == 403) {
+          Swal.fire({
+            title: "No tienes permiso para realizar esta acción",
+            icon: "alert",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "OK",
+          });
+          return response.json();
+        }
 
         if (response.status == 404) {
           textoBuscarError.innerHTML += `<p><small>El turno buscado no existe</small></p>`;
-  
         }
 
         if (response.ok) {
@@ -369,21 +418,28 @@ window.addEventListener("load", function () {
 
     fetch(`${baseUrl}/${id}`, settings)
       .then((response) => {
+        if (response.status == 403) {
+          Swal.fire({
+            title: "No tienes permiso para realizar esta acción",
+            icon: "alert",
+            confirmButtonColor: "#008000",
+            confirmButtonText: "OK",
+          });
+          return response.json();
+        }
+
         if (response.status == 404) {
           textoErrorEliminar.innerHTML += `<p><small>El turno a eliminar no existe </small></p>`;
           return response.json();
         }
 
         if (response.ok) {
+          textoEliminar.innerHTML += `<p><small>Turno eliminado con éxito</small></p>`;
           return response.json();
         }
       })
       .then((data) => {
         console.log(data);
-
-        if (data != null) {
-          textoEliminar.innerHTML += `<p><small>Turno eliminado con éxito</small></p>`;
-        }
       })
       .catch((error) => {
         console.log(error);

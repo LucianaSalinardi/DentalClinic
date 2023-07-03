@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/clinical-dental/patients")
 public class PatientController {
@@ -27,7 +26,7 @@ public class PatientController {
     @PostMapping()
     public ResponseEntity<?> createPatient(@RequestBody @Valid PatientRequestDto patientReqDto) {
         patientService.create(patientReqDto);
-        return new ResponseEntity<>(new JsonMessageDto("Successfully created patient", HttpStatus.CREATED.value()),HttpStatus.CREATED);
+        return new ResponseEntity<>(new JsonMessageDto("Successfully created patient", HttpStatus.CREATED.value()), HttpStatus.CREATED);
 
     }
 
@@ -44,12 +43,12 @@ public class PatientController {
     @PutMapping()
     public ResponseEntity<?> updatePatient(@RequestBody @Valid PatientRequestDto patientReqDto) {
         patientService.update(patientReqDto);
-        return new ResponseEntity<>(new JsonMessageDto("Successfully modified patient",HttpStatus.OK.value()),HttpStatus.OK);
+        return new ResponseEntity<>(new JsonMessageDto("Successfully modified patient", HttpStatus.OK.value()), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deletePatient(@PathVariable Long id) {
         patientService.delete(id);
-        return new ResponseEntity<>(new JsonMessageDto("Successfully deleted patient",HttpStatus.OK.value()),HttpStatus.OK);
+        return new ResponseEntity<>(new JsonMessageDto("Successfully deleted patient", HttpStatus.OK.value()), HttpStatus.OK);
     }
 }

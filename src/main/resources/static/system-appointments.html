@@ -20,6 +20,11 @@
       referrerpolicy="no-referrer"
     />
     <script src="./js/system-appointment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css"
+    />
   </head>
 
   <body>
@@ -28,16 +33,6 @@
         <div>
         <h1>Gestión de turnos</h1>
         </div>
-
-        <div class="user-info">
-          <p>username</p>
-          <div class="user-image"></div>
-          <button
-            id="closeApp"
-            class=".swal2-x-mark-line-left .swal2-x-mark-line-right"
-          >
-            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
-          </button>
         </div>
       </nav>
     </header>
@@ -55,7 +50,7 @@
         <input type="date" id="alta-turno-dia" name="alta-turno-dia" required><br>
         <label for="alta-turno-hora">Hora</label><br>
         <input type="time" id="alta-turno-hora" name="alta-turno-hora" step="1" required><br><br>
-        <div class="align-button">
+        <div>
         <button class="button-style" type="submit">Crear</button>
         <div class="texto-exito"></div>
         <div class="texto-error"></div>
@@ -76,7 +71,7 @@
         <input type="date" id="actualizar-turno-dia" name="actualizar-turno-dia" required><br>
         <label for="actualizar-turno-hora">Hora</label><br>
         <input type="time" id="actualizar-turno-hora" name="actualizar-turno-hora" step="1" required><br><br>
-        <div class="align-button">
+        <div>
         <button class="button-style" type="submit">Modificar</button>
         <div class="texto-exito"></div>
         <div class="texto-error"></div>
@@ -99,7 +94,7 @@
   <div class="busqueda turnos-busqueda">Búsquedas</div>
   <div class="form-admin-buscar form-admin-buscar-turno">
     <h3>Buscar turno por Id</h3>
-    <form>
+    <form class="form-admin-buscar-turno">
       <label for="id-turno">Id turno</label><br>
       <input type="number" id="id-turno" name="id-turno" placeholder="Ingrese id turno" required><br>
       <button class="button-style" type="submit">Buscar</button>

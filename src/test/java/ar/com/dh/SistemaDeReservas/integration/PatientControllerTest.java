@@ -194,7 +194,7 @@ public class PatientControllerTest {
     @DisplayName("Update patient method controller - Throws exception if patient or address does not exists")
     void updateMethodThrowsResourceNotFoundException() throws Exception {
 
-        JsonMessageDto jsonMessageResponse = new JsonMessageDto("The specified patient or address does not exists",HttpStatus.NOT_FOUND.value());
+        JsonMessageDto jsonMessageResponse = new JsonMessageDto("The patient associated with that address does not exists",HttpStatus.NOT_FOUND.value());
         PatientRequestDto patientRequestDto =
                 new PatientRequestDto(7L, "Pedro", "Perez", "87609843", new AddressRequestDto(3L, "Corrientes", 345, "CABA", "Buenos Aires", 1413, "Argentina"));
 
@@ -216,7 +216,7 @@ public class PatientControllerTest {
                         .andDo(print())
                         .andExpect(status().isNotFound())
                         .andExpect(content().contentType("application/json"))
-                        .andExpect(MockMvcResultMatchers.jsonPath("$.message").value("The specified patient or address does not exists"))
+                        .andExpect(MockMvcResultMatchers.jsonPath("$.message").value("The patient associated with that address does not exists"))
                         .andExpect(MockMvcResultMatchers.jsonPath("$.statusCode").value(HttpStatus.NOT_FOUND.value()))
                         .andReturn();
 

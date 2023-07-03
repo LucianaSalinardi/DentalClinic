@@ -125,7 +125,7 @@ main .forms {
   flex-direction: column;
 }
 
-.form-alineacion  {
+.form-alineacion {
   height: 580px;
   width: 89%;
   display: flex;
@@ -133,7 +133,7 @@ main .forms {
   justify-content: center;
 }
 
-.actualizar-paciente{
+.actualizar-paciente {
   height: 200px;
 }
 
@@ -141,8 +141,8 @@ main .forms {
   height: 400px;
 }
 
-.form-admin-buscar-turno form input{
-margin-left: -32px;
+.form-admin-buscar-turno form input {
+  margin-left: -32px;
 }
 
 .turno input {
@@ -169,7 +169,11 @@ margin-left: -32px;
   margin-bottom: 15px;
 }
 
-
+.align-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .busqueda {
   display: flex;
@@ -184,25 +188,21 @@ margin-left: -32px;
   background-color: var(--celeste);
 }
 
-.buscar-paciente{
+.buscar-paciente {
   display: flex;
 }
 
-
-.paciente-busqueda{
-  display: flex;
-  justify-content: center;
-
-}
-
-.odontologo-busqueda{
+.paciente-busqueda {
   display: flex;
   justify-content: center;
-
 }
 
+.odontologo-busqueda {
+  display: flex;
+  justify-content: center;
+}
 
-.turnos-busqueda{
+.turnos-busqueda {
   display: flex;
   justify-content: center;
 }
@@ -266,7 +266,6 @@ ul p {
   align-items: center;
 }
 
-
 ul button {
   width: 55px;
   height: 30px;
@@ -319,7 +318,7 @@ a {
 
 .listar-p {
   display: flex;
-  padding-bottom:  80px;
+  padding-bottom: 80px;
   align-items: center;
 }
 
@@ -361,19 +360,18 @@ a {
   font-size: 18px;
 }
 
-
-.listar-turnos-paciente-odontologo form{
+.listar-turnos-paciente-odontologo form {
   width: 400px;
   height: 50px;
   margin-left: 60px;
   margin-top: 40px;
 }
 
-.listar-paciente form{
+.listar-paciente form {
   margin-left: 82px;
 }
 
-.texto-error-listado{
+.texto-error-listado {
   font-size: 25px;
   text-align: center;
   margin-top: 60px;

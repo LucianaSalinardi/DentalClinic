@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping("/clinical-dental/dentists")
 public class DentistController {
@@ -25,7 +24,7 @@ public class DentistController {
     @PostMapping()
     public ResponseEntity<?> createDentist(@RequestBody @Valid DentistRequestDto dentistReqDto) {
         dentistService.create(dentistReqDto);
-        return new ResponseEntity<>(new JsonMessageDto("Successfully created dentist",HttpStatus.CREATED.value()), HttpStatus.CREATED);
+        return new ResponseEntity<>(new JsonMessageDto("Successfully created dentist", HttpStatus.CREATED.value()), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
@@ -41,12 +40,12 @@ public class DentistController {
     @PutMapping()
     public ResponseEntity<?> updateDentist(@RequestBody @Valid DentistRequestDto dentistReqDto) {
         dentistService.update(dentistReqDto);
-        return new ResponseEntity<>(new JsonMessageDto("Successfully modified dentist",HttpStatus.OK.value()), HttpStatus.OK);
+        return new ResponseEntity<>(new JsonMessageDto("Successfully modified dentist", HttpStatus.OK.value()), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteDentist(@PathVariable Long id) {
         dentistService.delete(id);
-        return new ResponseEntity<>(new JsonMessageDto("Successfully deleted dentist",HttpStatus.OK.value()),HttpStatus.OK);
+        return new ResponseEntity<>(new JsonMessageDto("Successfully deleted dentist", HttpStatus.OK.value()), HttpStatus.OK);
     }
 }

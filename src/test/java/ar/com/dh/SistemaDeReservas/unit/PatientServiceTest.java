@@ -1,4 +1,4 @@
-package ar.com.dh.SistemaDeReservas.unit.service;
+package ar.com.dh.SistemaDeReservas.unit;
 
 import ar.com.dh.dtos.requests.AddressRequestDto;
 import ar.com.dh.dtos.requests.PatientRequestDto;
